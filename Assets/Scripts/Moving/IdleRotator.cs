@@ -5,18 +5,23 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class IdleRotator : MonoBehaviour
+public class IdleRotator : Animations
 {
     [SerializeField] private float _rotateSpeed = 50f;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         float randomStartAngle = Random.Range(0f, 360f);
         transform.Rotate(0f, randomStartAngle, 0f, Space.Self);
     }
 
     private void Update()
     {
-        transform.Rotate(0f, _rotateSpeed * Time.deltaTime, 0f, Space.Self);
+        if (IsPlaying)
+            transform.Rotate(0f, _rotateSpeed * Time.deltaTime, 0f, Space.Self);
+        else
+            transform.Rotate(0f, 0, 0f, Space.Self);
     }
 }

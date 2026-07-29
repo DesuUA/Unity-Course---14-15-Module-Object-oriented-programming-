@@ -51,7 +51,7 @@ public class WaypointSelectorMovement : MonoBehaviour
     {
         if (_isStationed)
         {
-            _mover.Direction(MoverPosition);
+            _mover.SetDirection(MoverPosition);
             
             _currentWaitTimer += Time.deltaTime;
             
@@ -73,7 +73,7 @@ public class WaypointSelectorMovement : MonoBehaviour
             return;
         }
         
-        _mover.Direction(_currentTargetPoint);
+        _mover.SetDirection(_currentTargetPoint);
     }
 
     private void NextPoint()
