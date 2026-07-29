@@ -17,11 +17,13 @@ public class IdleRotator : Animations
         transform.Rotate(0f, randomStartAngle, 0f, Space.Self);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         if (IsPlaying)
             transform.Rotate(0f, _rotateSpeed * Time.deltaTime, 0f, Space.Self);
         else
-            transform.Rotate(0f, 0, 0f, Space.Self);
+            transform.localRotation = Quaternion.identity;
     }
 }

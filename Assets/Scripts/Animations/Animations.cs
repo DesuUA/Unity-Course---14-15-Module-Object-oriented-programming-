@@ -19,7 +19,7 @@ public abstract class Animations : MonoBehaviour
             Debug.LogError($"[{nameof(Animations)}] {nameof(InteractableItem)} component not found on {gameObject.name}", this);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (_hasComponent)
         {

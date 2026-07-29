@@ -11,9 +11,13 @@ public class ItemSpeedIncrease : InteractableItem
     
     public override void Interact()
     {
-        Mover.OverrideBaseSpeed(_speedIncreaseBy + Mover.CurrentSpeed);
-        Debug.Log($"Speed increased by {_speedIncreaseBy}, current speed: {Mover.CurrentSpeed}");
-        Destroy(gameObject);
+        if (Mover != null)
+        {
+            Mover.OverrideBaseSpeed(_speedIncreaseBy + Mover.CurrentSpeed);
+            Debug.Log($"Speed increased by {_speedIncreaseBy}, current speed: {Mover.CurrentSpeed}");
+            Destroy(gameObject);
+        }
+        else
+            Debug.LogError($"{Mover} not found in {this}");
     }
-    
 }

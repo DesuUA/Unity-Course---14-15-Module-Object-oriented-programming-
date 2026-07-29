@@ -26,8 +26,10 @@ public class IdleSway : Animations
         _randomTimeDrift = Random.Range(0f, Mathf.PI * 2f);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         if (IsPlaying)
         {
             float newPositionY = _startPosition + Mathf.Sin((Time.time * _frequency) + _randomTimeDrift) * _amplitude;
