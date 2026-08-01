@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemShootRound : InteractableItem
 {
+    [SerializeField] private Bullet _bulletPrefab;
+    
     private BulletSpawnPoint _bulletSpawnPoint;
     private bool _hasSpawnPoint;
     
@@ -11,7 +13,7 @@ public class ItemShootRound : InteractableItem
     {
         _bulletSpawnPoint = GetComponentInChildren<BulletSpawnPoint>();
         if (_bulletSpawnPoint == null)
-            Debug.LogError($"{this}: Точка спавна пули не найдена");
+            Debug.LogError($"{this}: BulletSpawnPoint not found.");
         else
             _hasSpawnPoint = true;
     }
@@ -20,7 +22,8 @@ public class ItemShootRound : InteractableItem
     {
         if (_hasSpawnPoint)
         {
-            
+            Instantiate(_bulletPrefab, _bulletSpawnPoint.transform.position, _bulletSpawnPoint.transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

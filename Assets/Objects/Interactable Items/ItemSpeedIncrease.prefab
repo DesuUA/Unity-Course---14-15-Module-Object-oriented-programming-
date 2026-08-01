@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e2f093dec3476eab0f0bfb087e606f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleSystemPrefab: {fileID: 7753143644281528469, guid: a0d98d7b342f76d44b84e33bab261a09,
+    type: 3}
   _speedIncreaseBy: 2
 --- !u!114 &5320837651651203515
 MonoBehaviour:
@@ -97,7 +99,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.2
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3487602592679439546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
@@ -129,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
@@ -139,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
@@ -154,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4245110222876880404, guid: b5bf9ab58d0be9e41b4ebea06e9afeb9,
         type: 3}

@@ -5,16 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _lifeTime = 5f;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _lifeTime;
 
-    private Bullet(Vector3 direction)
+    private void Start()
     {
-        transform.rotation = Quaternion.LookRotation(direction);
-        
         Rigidbody bulletBody = GetComponent<Rigidbody>();
-        bulletBody.AddForce(direction * _speed, ForceMode.Impulse);
-        
+        bulletBody.AddForce(transform.forward * _speed, ForceMode.VelocityChange);
+  
         Destroy(gameObject, _lifeTime);
     }
 }
